@@ -1,0 +1,15 @@
+from os import urandom
+if __name__=="__main__":
+	key=int(raw_input(),16)
+	deckey=int(str(key))
+	plainText=raw_input()
+	deci=[]
+	combined=[]
+	encrypt=''
+	for i in (plainText):
+	 	deci.append(ord(i))
+	for j in range(len(deci)):
+		combined.append(deci[j]^deckey)
+	for k in range(len(combined)):
+		encrypt=encrypt+str(hex(combined[k]))
+	print ''.join(encrypt.split("0x"))
